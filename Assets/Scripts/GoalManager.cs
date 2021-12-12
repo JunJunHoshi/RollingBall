@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GoalManager : MonoBehaviour
 {
     [SerializeField] Text ResultText;
+    [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; 
     private bool[] goallist = new bool[2];
     private void Start()
     {
@@ -33,6 +34,15 @@ public class GoalManager : MonoBehaviour
         {
             ResultText.text = "Goal";
             ResultText.enabled = true;
+            GoalAction();
+        }
+    }
+
+    private void GoalAction()
+    {
+        foreach(ParticleSystem effect in GoalEffectArray)
+        {
+            effect.Play();
         }
     }
 }
