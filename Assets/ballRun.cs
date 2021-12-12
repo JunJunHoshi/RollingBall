@@ -15,30 +15,15 @@ public class ballRun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		var dir = Vector3.zero;
-		float maxLimit = 3, minLimit = 360 - maxLimit;
-		Quaternion rotRH = Input.gyro.attitude;
-		Vector3 vecrot = Input.gyro.rotationRateUnbiased;
 
-		// 現在の自身の回転(rot)と開始時の回転(ori)との差分を取得し、それを回転情報と置く。
-		Quaternion rotDF = rotRH * Quaternion.Inverse(ori);
-		Quaternion rot = new Quaternion(-rotDF.x, 0f, -rotDF.y, rotDF.w);
+        Quaternion rotRH = Input.gyro.attitude;
 
-		//計算した回転情報をUnityの世界座標系に合うように座標変換
-		//rot = rot * Quaternion.Euler(0f, 0f, 0f);
-		// 合成して、自身に設定
-		this.transform.localRotation = rot;
-		Debug.Log(Input.gyro.attitude.eulerAngles);
-		
-		
+        // 現在の自身の回転(rot)と開始時の回転(ori)との差分を取得し、それを回転情報と置く。
+        Quaternion rotDF = rotRH * Quaternion.Inverse(ori);
+        Quaternion rot = new Quaternion(-rotDF.x, 0f, -rotDF.y, rotDF.w);
 
-        //X軸回転
-        //var localAngle = transform.localEulerAngles;
-        //if (localAngle.y > maxLimit && localAngle.y < 180)
-        //    localAngle.y = maxLimit;
-        //if (localAngle.y < minLimit && localAngle.y > 180)
-        //    localAngle.y = minLimit;
-        //transform.localEulerAngles = localAngle;
- 
-	}
+        // 合成して、自身に設定
+        this.transform.rotation = rot;
+
+    }
 }
