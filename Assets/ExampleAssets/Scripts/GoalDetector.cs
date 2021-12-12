@@ -9,6 +9,11 @@ public class GoalDetector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == GoalBall)
-        GetComponentInParent<GoalManager>().SetGoalNum(num);
+            GetComponentInParent<GoalManager>().SetGoalNum(num);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == GoalBall)
+            GetComponentInParent<GoalManager>().RemoveGoalNum(num);
     }
 }

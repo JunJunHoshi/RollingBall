@@ -17,6 +17,10 @@ public class GoalManager : MonoBehaviour
         goallist[i] = true;
         DetectGoal();
     }
+    public void RemoveGoalNum(int i)
+    {
+        goallist[i] = false;
+    }
 
     private void DetectGoal()
     {

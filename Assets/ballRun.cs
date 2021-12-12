@@ -5,33 +5,40 @@ using UnityEngine;
 public class ballRun : MonoBehaviour {
  
 	private float  speed = 10.0f;
+	private Quaternion ori = default;
  
 	// Use this for initialization
 	void Start () {
 		Input.gyro.enabled = true;
+		ori = Input.gyro.attitude;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		var dir = Vector3.zero;
 		float maxLimit = 3, minLimit = 360 - maxLimit;
-		Quaternion rotRH = Input.gyro.attitude ;
+		Quaternion rotRH = Input.gyro.attitude;
 		Vector3 vecrot = Input.gyro.rotationRateUnbiased;
-		
- 		// 現在の自信の回転の情報を取得する。
-        Quaternion rot = new Quaternion(-rotRH.x, rotRH.z, -rotRH.y, rotRH.w) * Quaternion.Euler(0f, 180f, 0f);;
-        // 合成して、自身に設定
-        this.transform.rotation = rot;
+
+		// 現在の自身の回転(rot)と開始時の回転(ori)との差分を取得し、それを回転情報と置く。
+		Quaternion rotDF = rotRH * Quaternion.Inverse(ori);
+		Quaternion rot = new Quaternion(-rotDF.x, 0f, -rotDF.y, rotDF.w);
+
+		//計算した回転情報をUnityの世界座標系に合うように座標変換
+		//rot = rot * Quaternion.Euler(0f, 0f, 0f);
+		// 合成して、自身に設定
+		this.transform.localRotation = rot;
+		Debug.Log(Input.gyro.attitude.eulerAngles);
 		
 		
 
         //X軸回転
-        var localAngle = transform.localEulerAngles;
-        if (localAngle.y > maxLimit && localAngle.y < 180)
-            localAngle.y = maxLimit;
-        if (localAngle.y < minLimit && localAngle.y > 180)
-            localAngle.y = minLimit;
-        transform.localEulerAngles = localAngle;
+        //var localAngle = transform.localEulerAngles;
+        //if (localAngle.y > maxLimit && localAngle.y < 180)
+        //    localAngle.y = maxLimit;
+        //if (localAngle.y < minLimit && localAngle.y > 180)
+        //    localAngle.y = minLimit;
+        //transform.localEulerAngles = localAngle;
  
 	}
 }
