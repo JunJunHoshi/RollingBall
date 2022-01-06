@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
  
-public class ballRun : MonoBehaviour {
+public class StageManager : MonoBehaviour {
  
-	private float  speed = 10.0f;
-	private Quaternion ori = default;
+	//ステージを管理するクラス
+	private float  speed = 10.0f; //ジャイロの感度
+	private Quaternion ori = default; //ジャイロの初期値
  
 	// Use this for initialization
 	void Start () {

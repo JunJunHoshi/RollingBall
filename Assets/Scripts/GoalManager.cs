@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class GoalManager : MonoBehaviour
 {
-    [SerializeField] Text ResultText;
-    [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; 
-    private bool[] goallist = new bool[2];
+    [SerializeField] Text ResultText; //ゴール表示用のテキスト
+    [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; //ゴールエフェクトをまとめた配列
+    private bool[] goallist = new bool[2]; //「各ゴールに指定のボールが来ているか」を格納するリスト
     private void Start()
     {
         ResultText.enabled = false;

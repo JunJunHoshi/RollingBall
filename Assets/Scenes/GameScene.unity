@@ -328,8 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b953c034f2e9f04e91861b194c3254e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 1
-  GoalBall: {fileID: 327198934}
+  GoalID: 1
+  mycolor: {r: 0, g: 0, b: 1, a: 0}
 --- !u!1001 &154572529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,8 +429,9 @@ GameObject:
   - component: {fileID: 327198937}
   - component: {fileID: 327198936}
   - component: {fileID: 327198935}
+  - component: {fileID: 327198940}
   m_Layer: 0
-  m_Name: Ball2
+  m_Name: BlueBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +484,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b502b18598677746a70fb583364bdd2, type: 2}
+  - {fileID: 2100000, guid: ae105bf9cedb94b47a905f70f5e358cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -520,12 +521,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327198934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2, y: 4.07, z: -8.4}
+  m_LocalPosition: {x: 5.9, y: 4.07, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &327198940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327198934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09966d45ff3cb594d9c44395f68854d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 0, g: 0, b: 1, a: 0}
 --- !u!4 &381496462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2731612705911322416, guid: a27178d32700b3847966384f1aaad0c4,
@@ -5631,8 +5645,9 @@ GameObject:
   - component: {fileID: 784204611}
   - component: {fileID: 784204610}
   - component: {fileID: 784204609}
+  - component: {fileID: 784204614}
   m_Layer: 0
-  m_Name: Ball1
+  m_Name: RedBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5685,7 +5700,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c487828bc7435c4ebeeeb9b8cd7be56, type: 2}
+  - {fileID: 2100000, guid: ae105bf9cedb94b47a905f70f5e358cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5722,12 +5737,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784204608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.9500003, y: 4.07, z: 7.34}
+  m_LocalPosition: {x: -7.9, y: 4.07, z: 7.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &784204614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784204608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09966d45ff3cb594d9c44395f68854d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &854457283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,8 +6094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b953c034f2e9f04e91861b194c3254e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 0
-  GoalBall: {fileID: 784204608}
+  GoalID: 0
+  mycolor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1001 &1063058124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6278,7 +6306,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c487828bc7435c4ebeeeb9b8cd7be56, type: 2}
+  - {fileID: 2100000, guid: c7f8300c426a5914d9c69955bebbdc1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6533,7 +6561,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b502b18598677746a70fb583364bdd2, type: 2}
+  - {fileID: 2100000, guid: c7f8300c426a5914d9c69955bebbdc1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11424,7 +11452,7 @@ GameObject:
   - component: {fileID: 1600233831}
   - component: {fileID: 1600233830}
   m_Layer: 0
-  m_Name: BaseGround
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
