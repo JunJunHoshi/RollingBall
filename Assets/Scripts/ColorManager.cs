@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class ColorManager
 {
-    //色の配合などを扱うクラス
+    //色の計算を扱うクラス
     public static Color MixtureColor(Color c1, Color c2)
     {
         Color resultColor;
         resultColor = c1 + c2;
+        if (resultColor.r > 1f) resultColor.r = 1f;
+        if (resultColor.g > 1f) resultColor.g = 1f;
+        if (resultColor.b > 1f) resultColor.b = 1f;
         return resultColor;
     }
 
