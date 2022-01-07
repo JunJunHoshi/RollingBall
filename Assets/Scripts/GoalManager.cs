@@ -5,32 +5,46 @@ using UnityEngine.UI;
 
 public class GoalManager : MonoBehaviour
 {
+    //Stageディレクトリ以下にGoalオブジェクトを置かないとダメ
     [SerializeField] Text ResultText; //ゴール表示用のテキスト
     [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; //ゴールエフェクトをまとめた配列
-    private bool[] goallist = new bool[2]; //「各ゴールに指定のボールが来ているか」を格納するリスト
+    private List<bool> goalList = new List<bool>(); //「各ゴールに指定のボールが来ているか」を格納するリスト
     private void Start()
     {
         ResultText.enabled = false;
+        InitializegoalList();
+    }
+
+    private void InitializegoalList()
+    {
+        for(int i= 0; i<transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<GoalDetector>() != null)
+            {
+                goalList.Add(false);
+            }
+        }
+        Debug.Log(goalList.Count);
     }
 
     public void SetGoalNum(int i)
     {
-        goallist[i] = true;
+        goalList[i] = true;
         DetectGoal();
     }
     public void RemoveGoalNum(int i)
     {
-        goallist[i] = false;
+        goalList[i] = false;
     }
 
     private void DetectGoal()
     {
         int goalnum = 0;
-        foreach(bool goal in goallist)
+        foreach(bool goal in goalList)
         {
             if (goal) goalnum += 1;
         }
-        if(goalnum >= 2)
+        if(goalnum >= goalList.Count)
         {
             ResultText.text = "Goal";
             ResultText.enabled = true;
