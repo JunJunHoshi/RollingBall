@@ -5,11 +5,17 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] public Color myColor = new Color();
+    private GameObject SmokeObj;
+
     public static string DestroyBallName; //衝突した際に消すボールの名前を格納。これを全てのBallで一律に共有し、当てはまるなら消去
     //最初に自身の色を代入
     private void Awake()
     {
         SetColor();
+    }
+    private void Start()
+    {
+        SmokeObj = StageManager.GetSmokeObj();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -18,7 +24,8 @@ public class Ball : MonoBehaviour
         {
             return;
         }
-        //もし他のボールに衝突した際は、自分の色を足した色に変更
+        //もし他のボールに衝突した際は、煙のアニメーションを起動し、自分の色を足した色に変更
+        PlaySmokeEffect();
         var othercolor = collision.gameObject.GetComponent<Ball>().myColor;
         MixtureColors(othercolor);
 
@@ -45,6 +52,13 @@ public class Ball : MonoBehaviour
     private void ShareDestroyBallName(Ball otherBall)
     {
         Ball.DestroyBallName = this.gameObject.name;
+    }
+
+    private void PlaySmokeEffect()
+    {
+        GameObject smoke = Instantiate(SmokeObj.gameObject, position:transform.position, Quaternion.identity);
+        smoke.GetComponent<ParticleSystem>().Play();
+        Destroy(smoke, 1f);
     }
 
     private IEnumerator DestroyBall()

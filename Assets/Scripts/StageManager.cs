@@ -4,12 +4,28 @@ using UnityEngine;
  
 public class StageManager : MonoBehaviour {
  
-	//ステージを管理するクラス
+	//ステージを管理するクラス。シングルトンを約束
 	private float  speed = 10.0f; //ジャイロの感度
 	private Quaternion ori = default; //ジャイロの初期値
- 
-	// Use this for initialization
-	void Start () {
+	[SerializeField] GameObject SmokePrefab;
+
+	private static GameObject SmokeEffect;
+
+	public static GameObject GetSmokeObj()
+    {
+        return SmokeEffect;
+    }
+    public static ParticleSystem GetSmokeEffect()
+    {
+        return SmokeEffect.GetComponent<ParticleSystem>();
+    }
+    private void Awake()
+    {
+        if(SmokePrefab != null) SmokeEffect = SmokePrefab;
+    }
+
+    // Use this for initialization
+    void Start () {
 		Input.gyro.enabled = true;
 		ori = Input.gyro.attitude;
 	}
