@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5644052109716040669}
   - component: {fileID: 896312718166936166}
   - component: {fileID: 4212677055002268325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlashSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 4925709354252056781}
   - component: {fileID: 4046132918193498231}
   - component: {fileID: 4668575896271539213}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9577,7 +9577,7 @@ GameObject:
   - component: {fileID: 7317983707416414074}
   - component: {fileID: 763922649087643799}
   - component: {fileID: 8779697301475203577}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14389,7 +14389,7 @@ GameObject:
   - component: {fileID: 9210384244656630297}
   - component: {fileID: 2723896373835116572}
   - component: {fileID: 8753754332973611192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlashSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19201,7 +19201,7 @@ GameObject:
   - component: {fileID: 6577829332564315094}
   - component: {fileID: 6970641470222606750}
   - component: {fileID: 6676922825026942869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24022,7 +24022,7 @@ GameObject:
   - component: {fileID: 4016936200548709392}
   - component: {fileID: 5532641974931500455}
   - component: {fileID: 1267936780637866780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: smoke2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28844,7 +28844,7 @@ GameObject:
   - component: {fileID: 9208651378739155230}
   - component: {fileID: 6472560488751868286}
   - component: {fileID: 8237353551295215327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TransformEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}

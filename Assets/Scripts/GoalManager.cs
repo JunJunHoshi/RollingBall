@@ -24,7 +24,6 @@ public class GoalManager : MonoBehaviour
                 goalList.Add(false);
             }
         }
-        Debug.Log(goalList.Count);
     }
 
     public void SetGoalNum(int i)
