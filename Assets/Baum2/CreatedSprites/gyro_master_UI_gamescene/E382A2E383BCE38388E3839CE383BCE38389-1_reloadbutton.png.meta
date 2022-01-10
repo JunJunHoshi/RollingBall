@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 514195ee35e3bd44a9c57654c847b69c
+guid: 211e3536fb3dccb4db3c0adcee06d820
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 497, y: 0, z: 282, w: 0}
+  spriteBorder: {x: 318, y: 2, z: 3, w: 111}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -132,7 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: Baum2_gyro_master_UI
+  spritePackingTag: Baum2_gyro_master_UI_gamescene
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
