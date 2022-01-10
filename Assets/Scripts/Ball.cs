@@ -24,8 +24,7 @@ public class Ball : MonoBehaviour
         {
             return;
         }
-        //もし他のボールに衝突した際は、煙のアニメーションを起動し、自分の色を足した色に変更
-        PlaySmokeEffect();
+        //もし他のボールに衝突した際は自分の色を足した色に変更
         var othercolor = collision.gameObject.GetComponent<Ball>().myColor;
         MixtureColors(othercolor);
 
@@ -46,7 +45,6 @@ public class Ball : MonoBehaviour
     private void SetColor()
     {
         GetComponent<MeshRenderer>().material.color = myColor;
-        Debug.Log(myColor);
     }
 
     private void ShareDestroyBallName(Ball otherBall)
@@ -56,7 +54,7 @@ public class Ball : MonoBehaviour
 
     private void PlaySmokeEffect()
     {
-        GameObject smoke = Instantiate(SmokeObj.gameObject, position:transform.position, Quaternion.identity);
+        GameObject smoke = Instantiate(SmokeObj.gameObject, position:new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
         smoke.GetComponent<ParticleSystem>().Play();
         Destroy(smoke, 1f);
     }
@@ -66,6 +64,7 @@ public class Ball : MonoBehaviour
         yield return new WaitForSeconds(0.00001f);
         if (DestroyBallName == this.gameObject.name)
         {
+            PlaySmokeEffect();
             Destroy(gameObject);
         }
     }
