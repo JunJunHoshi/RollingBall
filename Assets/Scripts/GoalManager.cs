@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GoalManager : MonoBehaviour
 {
@@ -9,10 +10,23 @@ public class GoalManager : MonoBehaviour
     [SerializeField] Text ResultText; //ゴール表示用のテキスト
     [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; //ゴールエフェクトをまとめた配列
     private List<bool> goalList = new List<bool>(); //「各ゴールに指定のボールが来ているか」を格納するリスト
+    static bool Goaled;
     private void Start()
     {
         ResultText.enabled = false;
         InitializegoalList();
+    }
+
+    private void Update()
+    {
+        if (Goaled)
+        {
+            var touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Ended)
+            {
+                MoveToNextStage();
+            }
+        }
     }
 
     private void InitializegoalList()
@@ -56,6 +70,14 @@ public class GoalManager : MonoBehaviour
         foreach(ParticleSystem effect in GoalEffectArray)
         {
             effect.Play();
+            Goaled = true;
         }
+    }
+
+    private void MoveToNextStage()
+    {
+        Goaled = false;
+        var NextStageId = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadSceneAsync(NextStageId, LoadSceneMode.Single);
     }
 }
