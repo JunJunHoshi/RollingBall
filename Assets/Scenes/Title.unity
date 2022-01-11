@@ -1234,8 +1234,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 1678425263}
   - component: {fileID: 1678425262}
   m_Layer: 0
-  m_Name: YellowGoal
+  m_Name: RedGoal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoalID: 0
-  mycolor: {r: 1, g: 1, b: 0, a: 0}
+  mycolor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!65 &1678425263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2203,7 +2203,6 @@ GameObject:
   - component: {fileID: 1904540347}
   - component: {fileID: 1904540346}
   - component: {fileID: 1904540345}
-  - component: {fileID: 1904540344}
   - component: {fileID: 1904540343}
   m_Layer: 0
   m_Name: Stage
@@ -2226,22 +2225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmokePrefab: {fileID: 8952320164721964179, guid: 7588c10483f354708be88d4408f2d1d4,
     type: 3}
---- !u!114 &1904540344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904540342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56bfc6834e051574fa296e044fca3d99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ResultText: {fileID: 0}
-  GoalEffectArray:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!54 &1904540345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2289,7 +2272,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 27d0575920ee66c4ba40444c281df79e, type: 2}
+  - {fileID: 2100000, guid: 027cb3d3d7dc79d41ad763e01759de07, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadGameScene : MonoBehaviour
+public class StageSelectManager : MonoBehaviour
 {
-    public void OnClick()
+    public void OnSelectScene(int id)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(id+1);      
     }
 }
