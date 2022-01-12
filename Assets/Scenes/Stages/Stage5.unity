@@ -1228,6 +1228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResultText: {fileID: 417052494}
+  NextStageButton: {fileID: 8428216052717922390}
   GoalEffectArray:
   - {fileID: 1590264172}
   - {fileID: 593160819}
@@ -2307,6 +2308,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1769722097, guid: 4b5e980e8dd876342bc8d7ff00f1e995, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1600233831}
+    - target: {fileID: 1769722097, guid: 4b5e980e8dd876342bc8d7ff00f1e995, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToNextStage
+      objectReference: {fileID: 0}
     - target: {fileID: 8428216052837245587, guid: 4b5e980e8dd876342bc8d7ff00f1e995,
         type: 3}
       propertyPath: m_Name
@@ -2419,6 +2428,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5e980e8dd876342bc8d7ff00f1e995, type: 3}
+--- !u!1 &8428216052717922390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4790209865863564281, guid: 4b5e980e8dd876342bc8d7ff00f1e995,
+    type: 3}
+  m_PrefabInstance: {fileID: 8428216052717922389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8679818811857024492
 PrefabInstance:
   m_ObjectHideFlags: 0

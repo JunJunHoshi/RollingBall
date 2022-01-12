@@ -8,12 +8,14 @@ public class GoalManager : MonoBehaviour
 {
     //Stageディレクトリ以下にGoalオブジェクトを置かないとダメ
     [SerializeField] Text ResultText; //ゴール表示用のテキスト
+    [SerializeField] GameObject NextStageButton; //次のステージへのボタン
     [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; //ゴールエフェクトをまとめた配列
     private List<bool> goalList = new List<bool>(); //「各ゴールに指定のボールが来ているか」を格納するリスト
     static bool Goaled;
     private void Start()
     {
         ResultText.enabled = false;
+        NextStageButton.SetActive(false);
         InitializegoalList();
     }
 
@@ -21,11 +23,13 @@ public class GoalManager : MonoBehaviour
     {
         if (Goaled)
         {
-            var touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Ended)
-            {
-                MoveToNextStage();
-            }
+            //ボタンを作ったのでコメントアウトしておきます(池田)
+            //
+            //var touch = Input.GetTouch(0);
+            //if (touch.phase == TouchPhase.Ended)
+            //{
+            //    MoveToNextStage();
+            //}
         }
     }
 
@@ -61,6 +65,10 @@ public class GoalManager : MonoBehaviour
         {
             ResultText.text = "Goal";
             ResultText.enabled = true;
+            if(SceneManager.GetActiveScene().buildIndex!=6){
+                NextStageButton.SetActive(true);
+            }
+            
             GoalAction();
         }
     }
@@ -74,7 +82,7 @@ public class GoalManager : MonoBehaviour
         }
     }
 
-    private void MoveToNextStage()
+    public void MoveToNextStage()
     {
         Goaled = false;
         var NextStageId = SceneManager.GetActiveScene().buildIndex + 1;
