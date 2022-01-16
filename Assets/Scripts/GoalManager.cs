@@ -10,6 +10,9 @@ public class GoalManager : MonoBehaviour
     [SerializeField] Text ResultText; //ゴール表示用のテキスト
     [SerializeField] GameObject NextStageButton; //次のステージへのボタン
     [SerializeField] ParticleSystem[] GoalEffectArray = new ParticleSystem[2]; //ゴールエフェクトをまとめた配列
+    [SerializeField] AudioClip sound1; //ゴール音
+    AudioSource audioSource;
+
     private List<bool> goalList = new List<bool>(); //「各ゴールに指定のボールが来ているか」を格納するリスト
     static bool Goaled;
     private void Start()
@@ -17,6 +20,7 @@ public class GoalManager : MonoBehaviour
         ResultText.enabled = false;
         NextStageButton.SetActive(false);
         InitializegoalList();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void InitializegoalList()
@@ -66,6 +70,7 @@ public class GoalManager : MonoBehaviour
         {
             effect.Play();
             Goaled = true;
+            audioSource.PlayOneShot(sound1);
         }
     }
 
