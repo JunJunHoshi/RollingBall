@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StageSelectManager : MonoBehaviour
 {
     [SerializeField] List<Transform> StageSelectButtonList = new List<Transform>(); //各ステージボタンごとのTransformコンポーネント
-    static bool[] ClearStatusArray = new bool[5];//各ステージごとのクリア状況を格納するリスト
+    static bool[] ClearStatusArray = new bool[10];//各ステージごとのクリア状況を格納するリスト
     static int CurrentStageId; //現在プレイしているステージを格納するリスト
 
     private void Awake()
