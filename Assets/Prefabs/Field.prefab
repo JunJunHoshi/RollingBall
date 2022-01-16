@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 224844795}
   - component: {fileID: 224844797}
   - component: {fileID: 224844796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   - component: {fileID: 836584038}
   - component: {fileID: 836584040}
   - component: {fileID: 836584039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9658,7 +9658,7 @@ GameObject:
   - component: {fileID: 4101061464939622727}
   - component: {fileID: 4101061464939622721}
   - component: {fileID: 4101061464939622726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14466,7 +14466,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -14574,7 +14574,7 @@ GameObject:
   - component: {fileID: 4101061466727619164}
   - component: {fileID: 4101061466727619166}
   - component: {fileID: 4101061466727619167}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
