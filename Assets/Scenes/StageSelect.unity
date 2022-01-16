@@ -920,6 +920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683aa6d580d91e646b5492d3e30b7612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageSelectButtonList: []
+  ClearStatusArray: 0000000100
 --- !u!1 &928837485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129652534578337057, guid: 43e8ec313a852c244870cc8c1e2bbae3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7129652535160345110, guid: 43e8ec313a852c244870cc8c1e2bbae3,
         type: 3}

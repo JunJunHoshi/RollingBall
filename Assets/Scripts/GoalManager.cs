@@ -19,20 +19,6 @@ public class GoalManager : MonoBehaviour
         InitializegoalList();
     }
 
-    private void Update()
-    {
-        if (Goaled)
-        {
-            //ボタンを作ったのでコメントアウトしておきます(池田)
-            //
-            //var touch = Input.GetTouch(0);
-            //if (touch.phase == TouchPhase.Ended)
-            //{
-            //    MoveToNextStage();
-            //}
-        }
-    }
-
     private void InitializegoalList()
     {
         for(int i= 0; i<transform.childCount; i++)
