@@ -10,7 +10,6 @@ public class FieldManager : MonoBehaviour
         var rotRH = new Quaternion(Input.gyro.attitude.x, -Input.gyro.attitude.z, Input.gyro.attitude.y, Input.gyro.attitude.w);
         var rot = rotRH.eulerAngles;
 
-        Debug.Log(rot);
         //カメラのローテーションはy軸だけでOK
         rot = new Vector3(0, rot.y, 0);
         transform.rotation = Quaternion.Euler(rot);  
