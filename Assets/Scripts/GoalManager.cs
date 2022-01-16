@@ -61,7 +61,8 @@ public class GoalManager : MonoBehaviour
 
     private void GoalAction()
     {
-        foreach(ParticleSystem effect in GoalEffectArray)
+        SaveClear();
+        foreach (ParticleSystem effect in GoalEffectArray)
         {
             effect.Play();
             Goaled = true;
@@ -71,7 +72,15 @@ public class GoalManager : MonoBehaviour
     public void MoveToNextStage()
     {
         Goaled = false;
+        StageSelectManager.SetNextStageId();
         var NextStageId = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadSceneAsync(NextStageId, LoadSceneMode.Single);
+    }
+
+    private void SaveClear()
+    {
+        //セーブに使うキーはCLERA + 現在のid。クリアしているかどうかは0.1で示す
+        int id = StageSelectManager.GetStageId();
+        PlayerPrefs.SetInt("CLEAR"+ id, 1);
     }
 }
