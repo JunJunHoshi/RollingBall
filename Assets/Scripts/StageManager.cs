@@ -21,12 +21,13 @@ public class StageManager : MonoBehaviour {
     }
     private void Awake()
     {
-        if(SmokePrefab != null) SmokeEffect = SmokePrefab;
+        Input.gyro.enabled = true;
+        if (SmokePrefab != null) SmokeEffect = SmokePrefab;
     }
 
     // Use this for initialization
-    void Start () {
-		Input.gyro.enabled = true;
+    void Start ()
+    {
 		ori = Input.gyro.attitude;
 	}
 	
