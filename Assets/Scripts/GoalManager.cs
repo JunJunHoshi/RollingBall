@@ -55,7 +55,7 @@ public class GoalManager : MonoBehaviour
         {
             ResultText.text = "Goal";
             ResultText.enabled = true;
-            if(SceneManager.GetActiveScene().buildIndex<7){
+            if(SceneManager.GetActiveScene().buildIndex<SceneManager.sceneCountInBuildSettings-1){
                 NextStageButton.SetActive(true);
             }
             
