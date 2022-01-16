@@ -9550,7 +9550,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2104346687}
   - component: {fileID: 2104346690}
-  - component: {fileID: 2104346689}
   - component: {fileID: 2104346688}
   m_Layer: 0
   m_Name: EffectCamera
@@ -9617,14 +9616,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2104346689
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104346686}
-  m_Enabled: 1
 --- !u!114 &2104346688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14454,7 +14445,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.06541473, g: 0.9245283, b: 0.9245283, a: 0}
+  m_BackGroundColor: {r: 0.35686275, g: 0.87058824, b: 0.6509804, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

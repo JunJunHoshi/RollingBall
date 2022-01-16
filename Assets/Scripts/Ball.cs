@@ -20,11 +20,13 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<Ball>() == null)
+        if (collision.gameObject.GetComponent<Ball>() == null)
         {
             return;
         }
+
         //もし他のボールに衝突した際は自分の色を足した色に変更
+        UniAndroidVibration.Vibrate(100);
         var othercolor = collision.gameObject.GetComponent<Ball>().myColor;
         MixtureColors(othercolor);
 
