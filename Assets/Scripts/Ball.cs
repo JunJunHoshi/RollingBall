@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] public Color myColor = new Color();
     private GameObject SmokeObj;
+    public GoalDetector CurrentStayingGoal = default; //現在ゴールに入っていた場合、そのGoalDetectorを格納。これはゴール内でボールが混ざった時に使う
 
     public static string DestroyBallName; //衝突した際に消すボールの名前を格納。これを全てのBallで一律に共有し、当てはまるなら消去
     //最初に自身の色を代入
@@ -16,6 +17,9 @@ public class Ball : MonoBehaviour
     private void Start()
     {
         SmokeObj = StageManager.GetSmokeObj();
+
+        //ボールが作成された瞬間もゴール検知をする
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,9 +39,18 @@ public class Ball : MonoBehaviour
         {
             ShareDestroyBallName(otherBall); //消すボールの名前を共有
             StartCoroutine(DestroyBall());
+            if (BecomeGoalColor())
+            {
+                CurrentStayingGoal.SetGoal();
+            }
         }
     }
 
+    private bool BecomeGoalColor()
+    {
+        if (CurrentStayingGoal != null && CurrentStayingGoal.IsTheGoalColor(gameObject)) return true;
+        else return false;
+    }
     private void MixtureColors(Color othercolor)
     {
         myColor = ColorManager.MixtureColor(myColor, othercolor);

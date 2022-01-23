@@ -12,7 +12,7 @@ public class GoalDetector : MonoBehaviour
     {
        transform.GetChild(0).GetComponent<Renderer>().material.color = mycolor;
     }
-    private bool IsTheGoalColor(GameObject ball)
+    public bool IsTheGoalColor(GameObject ball)
     {
         //そもそも衝突対象が ボールかどうかを判断
         if(ball.GetComponent<Ball>() == null)
@@ -29,12 +29,29 @@ public class GoalDetector : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<Ball>() != null)
+        {
+            other.gameObject.GetComponent<Ball>().CurrentStayingGoal = this;
+        }
         if (IsTheGoalColor(other.gameObject))
-            GetComponentInParent<GoalManager>().SetGoalNum(GoalID);
+        {
+            SetGoal();           
+        }
     }
     private void OnTriggerExit(Collider other)
     {
+        if (other.GetComponent<Ball>() != null)
+        {
+            other.gameObject.GetComponent<Ball>().CurrentStayingGoal = null;
+        }
         if (IsTheGoalColor(other.gameObject))
-            GetComponentInParent<GoalManager>().RemoveGoalNum(GoalID);
+        {
+            SetGoal();
+        }
+    }
+
+    public void SetGoal()
+    {
+        GetComponentInParent<GoalManager>().SetGoalNum(GoalID);
     }
 }
